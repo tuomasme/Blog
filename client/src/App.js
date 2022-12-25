@@ -1,27 +1,18 @@
-import {Button, Container, Row, Col} from 'react-bootstrap';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home'
+import Write from './pages/Write'
 
 function App() {
   return (
     <div>
-      <Header/>
-      <Formi/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/write" element={<Write/>}/>
+          </Routes>
+        </Router>
       </div>
   );
-}
-
-const Header = () => {
-  return(
-    <h1 className='d-flex justify-content-center'>My blog</h1>
-  )
-}
-
-const Formi = () => {
-  return(
-      <form className='d-flex justify-content-center'>
-        <input type='text' placeholder='Add header'/>
-        <input type='text' placeholder='Write text'/>  
-      </form>
-  )
 }
 
 /*    <div className='d-flex justify-content-start'>abc</div>
