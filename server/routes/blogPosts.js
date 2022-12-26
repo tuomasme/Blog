@@ -8,7 +8,7 @@ router.post('/api/post', async (req, res) => {
             text: req.body.text
         })
         const savePost = await newPost.save()
-        res.status(200).json('Post added successfully')
+        res.status(200).json(savePost)
     } catch (error) {
         res.json(error)
     }

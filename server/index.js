@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
+const cors = require('cors')
+
 const BlogPostRoute = require('./routes/blogPosts')
 
 const app = express()
@@ -9,6 +11,9 @@ const app = express()
 app.use(express.json())
 
 const PORT = process.env.PORT || 5000
+
+// Use cors
+app.use(cors())
 
 // Connect to database
 mongoose.connect(process.env.DB_CONNECT)

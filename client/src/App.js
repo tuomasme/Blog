@@ -1,14 +1,14 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home'
-import Write from './pages/Write'
+import HomePage from './pages/Home'
+import WritePage from './pages/Write'
 
 function App() {
   return (
     <div>
         <Router>
           <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/write" element={<Write/>}/>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/write" element={<WritePage/>}/>
           </Routes>
         </Router>
       </div>
