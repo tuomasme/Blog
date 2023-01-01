@@ -4,7 +4,7 @@ import WritePage from './pages/Write'
 
 function App() {
   return (
-    <div>
+    <div style={{'backgroundColor': 'aqua'}}>
         <Router>
           <Routes>
             <Route path="/" element={<HomePage/>}/>

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import NavBar from '../NavBar'
+import '../App.css'
 
 export default function HomePage(){
     return(
@@ -92,13 +93,13 @@ const WrittenBlogs = () => {
                                 <div className='d-flex justify-content-center'>
                                     <h5>{post.title}</h5>
                                 </div>
-                                <div className='d-flex justify-content-center'>
-                                    <p>{post.text}</p>
+                                <div className='d-flex justify-content-center' style={{'marginBottom': '1%'}}>
+                                    <div className='multiline'>{post.text}</div>
                                 </div>
-                                <div className='d-flex justify-content-center'>
-                                    <Button onClick={() => {setIsUpdating(post._id)}}>Update</Button>
+                                <div className='d-flex justify-content-center' style={{'marginBottom': '3%'}}>
+                                    <Button className="btn btn-warning" onClick={() => {setIsUpdating(post._id)}}>Update</Button>
                                     &nbsp;
-                                    <Button onClick={() => {deletePost(post._id)}}>Delete</Button>
+                                    <Button className="btn btn-danger" onClick={() => {deletePost(post._id)}}>Delete</Button>
                                 </div>
                             </div>
                         }

@@ -54,7 +54,7 @@ const Form = () => {
           <br/>
           <br/>
           
-          <Button onClick={e => addPost(e)}>Publish</Button>
+          <Button className="btn btn-success" onClick={e => addPost(e)}>Publish</Button>
           
         </form>
         </div>
