@@ -15,11 +15,4 @@ function App() {
   );
 }
 
-/*    <div className='d-flex justify-content-start'>abc</div>
-      <div className='d-flex justify-content-end'>abc</div>
-      <div className='d-flex justify-content-center'>abc</div>
-      <div className='d-flex justify-content-between'>abc</div>
-      <div className='d-flex justify-content-around'>abc</div>
-      <div className='d-flex justify-content-evenly'>abc</div> */
-
 export default App;
