@@ -7,7 +7,7 @@ import '../App.css'
 export default function HomePage(){
     return(
         <div>
-            <h1 className='d-flex justify-content-center'>Blog site</h1>
+            <h1 className='d-flex justify-content-center'>Read and modify blogs</h1>
             <NavBar/>
             <WrittenBlogs/>
         </div>
@@ -63,15 +63,15 @@ const WrittenBlogs = () => {
     }
     
     // Form for updating selected blog post
-    const renderUpdateForm = () => (
+    const renderUpdateForm = (post) => (
         <div style={{"marginTop": "20px", "marginBottom": "20px"}}>
             <form>
             <div className='d-flex justify-content-center'>
-                <input type="text" placeholder="Modify header" size="50" onChange={e => {setUpdatePostHeaderPart(e.target.value)}} value={updatePostHeaderPart}/>
+                <input type="text" placeholder="Modify header" size="50" defaultvalue={post.title} onChange={e => {setUpdatePostHeaderPart(e.target.value)}}/>
             </div>
             &nbsp;
             <div className='d-flex justify-content-center'>
-                <textarea rows="20" cols="100" placeholder="Modify text" onChange={e => {setUpdatePostTextPart(e.target.value)}} value={updatePostTextPart}/>  
+                <textarea rows="20" cols="100" placeholder="Modify text" defaultValue={post.text} onChange={e => {setUpdatePostTextPart(e.target.value)}}/>  
             </div>
             &nbsp;
             <div className='d-flex justify-content-center'>
@@ -82,13 +82,13 @@ const WrittenBlogs = () => {
     )
     
     return(
-        <div>
+        <div style={{'marginTop': '3%'}}>
             {
                 listPosts.map(post => (
                     <div>
                         {
                             isUpdating === post._id
-                            ? renderUpdateForm()
+                            ? renderUpdateForm(post)
                             : <div>
                                 <div className='d-flex justify-content-center'>
                                     <h5>{post.title}</h5>

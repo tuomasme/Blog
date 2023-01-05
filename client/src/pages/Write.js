@@ -47,15 +47,17 @@ const Form = () => {
     return(
         <div className='d-flex justify-content-center' style={{"marginTop": "20px"}}>
         <form>
+          <div className='d-flex justify-content-start'>
           <input type="text" placeholder="Add header" size="50" onChange={e => {setHeaderPartText(e.target.value)}} value={headerPartText}/>
+          </div>
           <br/>
-          <br/>
+          <div className='d-flex justify-content-center'>
           <textarea rows="20" cols="100" placeholder="Write text" onChange={e => {setTextPartText(e.target.value)}} value={textPartText}/>  
+          </div>
           <br/>
-          <br/>
-          
-          <Button className="btn btn-success" onClick={e => addPost(e)}>Publish</Button>
-          
+          <div className='d-flex justify-content-end'>
+          <Button className='btn btn-success' onClick={e => addPost(e)}>Publish</Button>
+          </div>
         </form>
         </div>
     )
